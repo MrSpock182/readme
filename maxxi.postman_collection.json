@@ -1,0 +1,1280 @@
+{
+	"info": {
+		"_postman_id": "1affde2a-4266-485a-a530-b81b47bab179",
+		"name": "Maxxi CISP MicroServices API Associada",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Receita Federal",
+			"item": [
+				{
+					"name": "Consulta Receita",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8091/receita-federal/v1/cnpj/45543915000181",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8091",
+							"path": [
+								"receita-federal",
+								"v1",
+								"cnpj",
+								"45543915000181"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filial Raiz Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "01197058-25ba-4321-b11a-224c55e58f76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8091/receita-federal/v1/raizCnpj/45543915",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8091",
+							"path": [
+								"receita-federal",
+								"v1",
+								"raizCnpj",
+								"45543915"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Receita Federal Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n        \"45543915000181\",\n        \"47508411000156\",\n        \"00001690000101\",\n        \"00001717000158\",\n        \"00001719000147\",\n        \"00001780000194\",\n        \"00002057000120\",\n        \"00002200000183\",\n        \"00002201000128\",\n        \"00002229000165\"\n    ]\n\n\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/receita-federal-consulta/receita-federal/v1/cnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"receita-federal-consulta",
+								"receita-federal",
+								"v1",
+								"cnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Receita Federal Raiz Cnpj",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"45543915\",\n    \"47508411\"\n        \n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/receita-federal-consulta/receita-federal/v1/raizCnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"receita-federal-consulta",
+								"receita-federal",
+								"v1",
+								"raizCnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Sintegra",
+			"item": [
+				{
+					"name": "Consulta Sintegra",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8092/sintegra/v1/cnpj/00002057000120",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8092",
+							"path": [
+								"sintegra",
+								"v1",
+								"cnpj",
+								"00002057000120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filial Raiz Cnpj",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8092/sintegra/v1/raizCnpj/45543915",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8092",
+							"path": [
+								"sintegra",
+								"v1",
+								"raizCnpj",
+								"45543915"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Sintegra Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "01197058-25ba-4321-b11a-224c55e58f76",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"45543915000181\",\n    \"00002429000118\",\n    \"47508411000156\",\n    \"00002038000101\",\n    \"00002057000120\",\n    \"00002333000150\",\n    \"00002363000166\",\n    \"00002309000110\",\n    \"00002229000165\",\n    \"00002230000190\"\n    \n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/sintegra-consulta/sintegra/v1/cnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"sintegra-consulta",
+								"sintegra",
+								"v1",
+								"cnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Sintegra Raiz Cnpj",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"45543915\",\n    \"47508411\"        \n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/sintegra-consulta/sintegra/v1/raizCnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"sintegra-consulta",
+								"sintegra",
+								"v1",
+								"raizCnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Suframa",
+			"item": [
+				{
+					"name": "Consulta Suframa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/suframa/v1/cnpj/05518915000107",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"suframa",
+								"v1",
+								"cnpj",
+								"05518915000107"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filial Raiz Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/suframa/v1/raizCnpj/05518915",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"suframa",
+								"v1",
+								"raizCnpj",
+								"05518915"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Suframa Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"05518915000107\",\n    \"00563790000113\",\n    \"00215339000105\",\n    \"00348307000188\",\n    \"00443668000103\",\n    \"00844739000180\",\n    \"00879284000138\",\n    \"00483408000161\",\n    \"00774390000157\",\n    \"00679066000150\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/suframa-consulta/suframa/v1/cnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"suframa-consulta",
+								"suframa",
+								"v1",
+								"cnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Suframa Raiz Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"00679066\",\n    \"05518915\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/suframa-consulta/suframa/v1/raizCnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"suframa-consulta",
+								"suframa",
+								"v1",
+								"raizCnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Simples Nacional",
+			"item": [
+				{
+					"name": "Consulta Simples Nacional",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8095/simples-nacional/v1/cnpj/45543915000181",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8095",
+							"path": [
+								"simples-nacional",
+								"v1",
+								"cnpj",
+								"45543915000181"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filial Raiz Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8095/simples-nacional/v1/raizCnpj/45543915",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8095",
+							"path": [
+								"simples-nacional",
+								"v1",
+								"raizCnpj",
+								"45543915"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Simples Nacional Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"45543915000181\",\n    \"47508411000156\",\n    \"98752959000188\",\n    \"98750359000180\",\n    \"98749864000105\",\n    \"98744212000188\",\n    \"98714462000256\",\n    \"98714462000175\",\n    \"98714306000295\",\n    \"98674401000121\" \n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/simples-nacional-consulta/simples-nacional/v1/cnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"simples-nacional-consulta",
+								"simples-nacional",
+								"v1",
+								"cnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Simples Nacional Raiz Cnpj",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"45543915\",\n    \"47508411\"        \n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/simples-nacional-consulta/simples-nacional/v1/raizCnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"simples-nacional-consulta",
+								"simples-nacional",
+								"v1",
+								"raizCnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qsa Socio",
+			"item": [
+				{
+					"name": "Consulta Qsa Socio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8094/qsa-socio/v1/cnpj/45543915000181",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8094",
+							"path": [
+								"qsa-socio",
+								"v1",
+								"cnpj",
+								"45543915000181"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Qsa Socio raiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/qsa-socio-consulta/qsa-socio/v1/raizCnpj/45543915",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"qsa-socio-consulta",
+								"qsa-socio",
+								"v1",
+								"raizCnpj",
+								"45543915"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Qsa Socio Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18dfcfc8-6d8e-4561-970f-94d74aae2ecc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \n    \"00001719000147\",\n    \"45543915000181\",\n    \"47508411000156\",\n    \"00001904000131\",\n    \"00002038000101\",\n    \"00002114000170\",\n    \"00002363000166\",\n    \"00002687000102\",\n    \"00002765000160\",\n    \"00002765000241\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/qsa-socio-consulta/qsa-socio/v1/cnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"qsa-socio-consulta",
+								"qsa-socio",
+								"v1",
+								"cnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Situacao Cadastral",
+			"item": [
+				{
+					"name": "Consulta Situacao Cadastral",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\"45543915000181\"\n\n\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8096/situacao-cadastral/v1/cnpj/47508411000156",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8096",
+							"path": [
+								"situacao-cadastral",
+								"v1",
+								"cnpj",
+								"47508411000156"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Situacao Cadastral Cnpj",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "57d7f6a5-6eef-45ea-bcb3-1d48b3ede9f8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"45543915000181\",\n    \"47508411000156\",\n    \"00002429000118\",\n    \"00002038000101\",\n    \"05518915000107\",\n    \"00348307000188\",\n    \"98714462000256\",\n    \"98714462000175\",\n    \"00002038000101\",\n    \"00002114000170\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/situacao-cadastral-consulta/situacao-cadastral/v1/cnpj/",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"situacao-cadastral-consulta",
+								"situacao-cadastral",
+								"v1",
+								"cnpj",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Cleaning",
+			"item": [
+				{
+					"name": "Upload de arquivo para processamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Volumes/x64/Downloads/PROSPECAO_1.txt"
+								},
+								{
+									"key": "form",
+									"value": "{\"userId\": \"1\", \"companyId\": \"1\", \"consult\": [\"SINTEGRA\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8090/data-cleaning/v1/upload",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8090",
+							"path": [
+								"data-cleaning",
+								"v1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta status do processamento do arquivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8090/data-cleaning/v1/check/file/5197f3e2-701f-4683-8ead-628dc15b8753",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8090",
+							"path": [
+								"data-cleaning",
+								"v1",
+								"check",
+								"file",
+								"5197f3e2-701f-4683-8ead-628dc15b8753"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9090/cisp/context/v1/check/user/1?page=0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://maxxi-dev.cisp.com.br:8050/data-cleaning/data-cleaning/v1/check/user/1?page=0",
+							"protocol": "http",
+							"host": [
+								"maxxi-dev",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8050",
+							"path": [
+								"data-cleaning",
+								"data-cleaning",
+								"v1",
+								"check",
+								"user",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apply Analyse Risk Credit",
+			"item": [
+				{
+					"name": "Cliente Antigo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"refusalCriteriaGroupId\":\"12345\",\n   \"cnpj\":\"47508411000156\",\n   \"companyId\":100,\n   \"firstPurchaseDate\":\"2021-03-03\",\n   \"currentCreditLimitValue\":25.00,\n   \"valueBillDeclaredLiquidity\":10000.90,\n   \"modelId\":1,\n   \"userId\":1,\n   \"invoice\":{\n      \"pastDue\":{\n         \"quantity\":1,\n         \"amount\":1500.00\n      },\n      \"paidOnTime\":{\n         \"quantity\":1,\n         \"amount\":1300.00\n      },\n      \"paidLate\":{\n         \"upThirtyDays\":{\n            \"quantity\":1,\n            \"amount\":1300.00\n         },\n         \"moreThanThirtyDays\":{\n            \"quantity\":1,\n            \"amount\":50.00\n         }\n      },\n      \"overdue\":{\n         \"quantity\":30,\n         \"amount\":50.00\n      }\n   },\n   \"debt\":{\n      \"amountGreaterAccumulation\":1500,\n      \"latestInvoice\":{\n         \"days\":45,\n         \"amount\":50.00\n      },\n      \"due\":{\n         \"quantity\":10,\n         \"amount\":1500\n      },\n      \"overdue\":{\n         \"quantity\":10,\n         \"amount\":1500\n      }\n   }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/apply-analyze-risk-credit/v1/analyze/oldCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"oldCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente Novo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"cnpj\":\"47508411000156\",\n   \"codigoAssociada\": 100,\n   \"dataPrimeiraCompra\":\"2021-03-03\",\n   \"valorLimiteCreditoAtual\": 25.00,\n   \"valorFaturamentoLiquidoDeclarado\": 10000.90,\n   \"modeloId\": 1,\n   \"usuarioId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/newCustomer?key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"newCustomer"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/swagger-ui.html#/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"swagger-ui.html"
+							],
+							"hash": "/"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Status Cliente Novo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/newCustomer/b146b41c-833e-405d-973b-c330310f847b?key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"newCustomer",
+								"b146b41c-833e-405d-973b-c330310f847b"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Status Cliente Antigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/oldCustomer/5b92416a-74c9-4232-b34f-783be2db18e1?key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"oldCustomer",
+								"5b92416a-74c9-4232-b34f-783be2db18e1"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Lista Associada Old Custome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/oldCustome/company/100?key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"oldCustome",
+								"company",
+								"100"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Lista Associada New Custome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/newCustome/company/100?key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"newCustome",
+								"company",
+								"100"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Lista Associada e Cnpj New Custome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/newCustome/company/100?cnpj=45543915000181&key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"newCustome",
+								"company",
+								"100"
+							],
+							"query": [
+								{
+									"key": "cnpj",
+									"value": "45543915000181"
+								},
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Lista Associada e Cnpj Old Custome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api-dev.maxxi.cisp.com.br:8000/apply-analyze-risk-credit/v1/analyze/oldCustome/company/100?cnpj=45543915000181&key=xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr",
+							"protocol": "http",
+							"host": [
+								"api-dev",
+								"maxxi",
+								"cisp",
+								"com",
+								"br"
+							],
+							"port": "8000",
+							"path": [
+								"apply-analyze-risk-credit",
+								"v1",
+								"analyze",
+								"oldCustome",
+								"company",
+								"100"
+							],
+							"query": [
+								{
+									"key": "cnpj",
+									"value": "45543915000181"
+								},
+								{
+									"key": "key",
+									"value": "xmJxPjuqWw2Djvfa8RrQRo4YHp7xcTkr"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
